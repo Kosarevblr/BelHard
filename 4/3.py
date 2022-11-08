@@ -3,8 +3,6 @@
 # для этих ключей будут браться с клавиатуры
 
 n = int(input('n = '))
-nested_dict = {}
-nested_dict['name'] = input('name: ')
-nested_dict['email'] = input('email: ')
-fin = {i: nested_dict for i in range(n)}
+
+fin = {i: {'name': input('name: '), 'email': input('email: ')} for i in range(1, n+1)}
 print(fin)
