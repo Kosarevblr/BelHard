@@ -3,10 +3,5 @@
 # буквы в текст введенный с клавиатуры
 
 n = input().lower()
-a = 'abcdefghijklmnopqrstuvwxyz'
-keys = dict.fromkeys([a[i] for i in range(len(a))], 0)
-
-b=[(a[i] for i in range(len(n)))]
-
-print(keys)
-print(b)
+ans = {i: n.count(i) for i in n}
+print(ans)
