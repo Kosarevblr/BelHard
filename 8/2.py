@@ -7,8 +7,8 @@
 
 
 ax = 2
-ay = 0
-bx = 0
+ay = -1
+bx = -1
 by = 4
 
 class Restangle:
