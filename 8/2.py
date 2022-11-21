@@ -23,7 +23,7 @@ class Restangle:
         return (abs(ax-bx) + abs(ay-by))*2
 
     @staticmethod
-    def sqare(ax=int, ay=int, bx=int, by=int):
+    def sqare(ax=int, ay=int, bx=int, by=int) -> int:
         return abs(ax - bx)*abs(ay-by)
 
 print(Restangle.perimetr(ax, ay, bx, by))
