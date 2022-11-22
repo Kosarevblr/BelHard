@@ -4,7 +4,7 @@
 # Написать метод max_count — возвращающий число из списка, которое чаще встречается,
 # если таких чисел несколько, вывести среднее арифметическое среди таких чисел
 
-from collections import Counter
+
 
 spis = [1, 2, 3, 4, 5, 5,5, 5, 5, 1, 1, 1, 6, 1, 2, 3, 3]
 
@@ -19,7 +19,8 @@ class numbers:
             su += i
         return round(su / len(spis), 2)
 
-    def max_count(self) -> int:
+    def max_count(self) -> int | float:
+        from collections import Counter
         result = Counter(spis).most_common()
         s=[]
         for i in range(len(result)):
