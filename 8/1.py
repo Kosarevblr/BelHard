@@ -22,7 +22,7 @@ class Student:
 
     @staticmethod
     def student_sort(students: list[str]) -> list:
-        return sorted(students)
+        return sorted(students, key=lambda student: student.first_name)
 
 
 a = Student(first_name, group, marks)
