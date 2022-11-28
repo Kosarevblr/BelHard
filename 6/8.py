@@ -1,7 +1,7 @@
 # Дан словарь, ключ - Название страны, значение - список городов, на вход
 # поступает город, необходимо сказать из какой он страны
 
-dict = {'Belarus': 'Minsk', 'Poland': 'Warsaw', 'USA': 'Portland'}
+dict = {'Belarus': ['Minsk', 'Brest'], 'Poland': 'Warsaw', 'USA': 'Portland'}
 city = input('Enter the city: ')
 
 
@@ -13,4 +13,4 @@ def opred(dict, city):
 
 print(opred(dict, city))
 
-
+?????????

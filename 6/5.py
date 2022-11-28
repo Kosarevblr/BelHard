@@ -14,6 +14,7 @@ def revers(spis):
 
     return spis
 
+reversed()
 
 print(revers(spis))
 
