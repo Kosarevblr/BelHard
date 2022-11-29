@@ -9,8 +9,8 @@
 # подходящего автомобиля нет, метод должен возвращать None
 
 class Car:
-    def __init__(self, color: str, count_passanger_seats: int, is_baby_seat: bool, is_busy: bool = False) -> None:
-        self.is_busy = is_busy
+    def __init__(self, color: str, count_passanger_seats: int, is_baby_seat: bool) -> None:
+        self.is_busy = False
         self.is_baby_seat = is_baby_seat
         self.color = color
         self.count_passanger_seats = count_passanger_seats
@@ -22,37 +22,35 @@ class Car:
         else:
             baby_seat = 'with'
         av = ''
-        if self.is_busy == False:
+        if self.is_busy == True:
             av = 'avaliable'
         else:
             av = 'NOT avaliable'
         return f'{self.color} auto, {self.count_passanger_seats} seats, {baby_seat} baby seat, {av} now'
 
 
-test = Car('red', 4, False, False)
-print(test.__str__())
+test = Car('red', 4, False)
+# print(test.__str__())
 
 
-class Taxi(Car):
-    def __init__(
-            self, cars: list[Car], color: str, count_passanger_seats: int, is_baby_seat: bool,
-            count_passangers=int, baby_counter: bool = False
-    ):
-        super().__init__(color, count_passanger_seats, is_baby_seat)
+class Taxi:
+    def __init__(self, cars: list[Car]) -> None:
         self.cars = cars
-        self.count_passangers = count_passangers
-        self.baby_counter = baby_counter
 
-    def find_car(self, count_passangers: int, baby_counter: bool = False,
-                 ) -> str:
-
-        for car in list[Car]:
-            if Car.count_passanger_seats >= count_passangers or \
-                    (baby_counter == True and is_baby_seat == False) or \
-                    is_busy == False:
-                return car
-            else:
-                return None
+    def find_car(self, count_passangers: int, is_baby: bool) -> Car | None:
+        for car in self.cars:
+            if car.count_passanger_seats >= count_passangers and not car.is_busy:
+                if is_baby and car.is_baby_seat:
+                    car.is_busy = True
+                    return car
+                elif not is_baby:
+                    car.is_busy = True
+                    return car
 
 
-print(Taxi.find_car(5, True))
+car1 = Car('white', 4, False)
+car2 = Car('red', 4, True)
+car3 = Car('white', 5, True)
+cars = [car1, car2, car3]
+taxi = Taxi(cars)
+print(taxi.find_car(5, True))
