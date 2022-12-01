@@ -10,7 +10,6 @@ lines = file.readlines()
 file = open('text.txt', 'r', encoding='utf-8')
 for line in file:
     count += 1
-
 if count >= n:
     for i in range(1, n + 1):
         new_text_A = lines[i-1]
