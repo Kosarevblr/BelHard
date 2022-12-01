@@ -49,7 +49,7 @@ class Taxi:
 
 
 car1 = Car('white', 4, False)
-car2 = Car('red', 4, True)
+car2 = Car('red', 6, True)
 car3 = Car('white', 5, True)
 cars = [car1, car2, car3]
 taxi = Taxi(cars)
