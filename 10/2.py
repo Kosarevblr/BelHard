@@ -19,3 +19,4 @@ for i in range(0, len(text4)):
 
 file.close()
 print(*['Гласных больше' if count1>count2 else 'Согласных больше'])
+print(text3)

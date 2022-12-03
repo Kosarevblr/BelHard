@@ -24,7 +24,6 @@ with open('key.txt', 'r', encoding='utf-8') as file1:
 cod_mess = []
 cod_key = []
 ans = []
-ans1=[]
 for i in range(0, len(message)):
     cod_mess.append(bin(ord(message[i]))[2:])
     cod_key.append(bin(ord(key[i]))[2:])
