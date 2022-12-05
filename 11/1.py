@@ -54,3 +54,19 @@ cur.execute('''
     );
 ''')
 conn.commit()
+
+cur.executemany('''
+    INSERT INTO categories(name)
+    VALUES(?);    
+''', (('airdrone',), ('drone',)))
+conn.commit()
+
+cur.execute('''
+    UPDATE categories SET name = 'aiRdronE' WHERE id = 9
+''')
+conn.commit()
+
+cur.execute('''
+    DELETE FROM categories WHERE id = 10
+''')
+conn.commit()
